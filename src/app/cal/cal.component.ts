@@ -11,22 +11,22 @@ import { Subject } from 'rxjs';
   styleUrl: './cal.component.scss'
 })
 export class CalComponent {
-  subjects: { grade: number, credit: number }[] = [
-    { grade: 0, credit: 0 }
+  semesters: { sgpa: number, credit: number }[] = [
+    { sgpa: 0, credit: 0 }
   ];
   cgpa: number = 0;
 
-  addSubject() {
-    this.subjects.push({ grade: 0, credit: 0 });
+  addSemester() {
+    this.semesters.push({ sgpa: 0, credit: 0 });
   }
 
   calculateCGPA() {
     let totalGradePoints = 0;
     let totalCreditHours = 0;
 
-    this.subjects.forEach(subject => {
-      totalGradePoints += subject.grade * subject.credit;
-      totalCreditHours += subject.credit;
+    this.semesters.forEach(semester => {
+      totalGradePoints += semester.sgpa * semester.credit;
+      totalCreditHours += semester.credit;
     });
     this.cgpa = totalGradePoints / totalCreditHours;
   }

@@ -1,13 +1,15 @@
 <h2> CGPA Calculator</h2>
 <form (ngSubmit)="calculateCGPA()">
-    <div *ngFor="let subject of subjects;let i=index">
-        <label for="grade{{i}}" >Subject{{i+1}} Grade: </label>
-        <input type="number" id="grade{{i}}" [(ngModel)]="subject.grade" name="grade{{i}}" required>
+    <div *ngFor="let semester of semesters;let i=index">
+        <label for="grade{{i}}" >Semester {{i+1}} Grade: </label>
+        <input type="number" id="grade{{i}}" [(ngModel)]="semester.sgpa" name="grade{{i}}" required>
+        <br>
 
-        <label for="credit{{i}}" >Subject{{i+1}} Credit: </label>
-        <input type="number" id="credit{{i}}" [(ngModel)]="subject.credit" name="credit{{i}}" required>
+        <label for="credit{{i}}" >Semester{{i+1}} Credit: </label>
+        <input type="number" id="credit{{i}}" [(ngModel)]="semester.credit" name="credit{{i}}" required>
+        <br>
 
-        <button type="button" (click)="addSubject()">Add Subject</button>
+        <button type="button" (click)="addSemester()">Add semester</button>
         <button type="submit">Calculate CGPA</button>
     </div>
 </form>
