@@ -12,7 +12,7 @@ import { Subject } from 'rxjs';
 })
 export class CalComponent {
   semesters: { sgpa: number, credit: number }[] = [
-    { sgpa: 0, credit: 0 }
+    { sgpa: NaN, credit: NaN }
   ];
   cgpa: number = 0;
 
