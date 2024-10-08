@@ -1,9 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cal',
   standalone: true,
-  imports: [],
+  imports: [FormsModule,CommonModule],
   templateUrl: './cal.component.html',
   styleUrl: './cal.component.scss'
 })
@@ -15,5 +17,9 @@ export class CalComponent {
 
   addSubject() {
     this.subjects.push({ grade: 0, credit: 0 });
+  }
+
+  calculateCGPA(){
+    
   }
 }
